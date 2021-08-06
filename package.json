@@ -1,0 +1,23 @@
+{
+    "name": "ws-wh-demo",
+    "version": "1.0.0",
+    "engines": {
+        "node": "10.x"
+    },
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "NA",
+    "dependencies": {
+        "bufferutil": "1.2.1",
+        "express": "4.13.4",
+        "utf-8-validate": "1.2.1",
+        "body-parser": "^1.15.0",
+        "ws": "7.1.0",
+        "express-ws": "4.0.0"
+    }
+}

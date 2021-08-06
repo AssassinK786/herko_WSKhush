@@ -1,0 +1,40 @@
+<html>
+
+<body>
+  <div>
+    <h3>Websocket/Webhook - Test client</h3>
+    <p>This client will disconnect after 15 seconds of inactivity. Please refresh this page to re-establish connection.</p>
+    <p><b>"astate":"ON" ,"astate":"OFF", "qstate":"ON" ,"qstate":"OFF","cstate":"ON" ,"cstate":"OFF"</b></p>
+    <label for="clientReq"><b>Enter Message: </b></label>
+    <input type="text" id="clientReq" name='res'>
+    <button onclick="myFunction();">Send</button>
+    <br><br>
+    <p id="status"></p>
+    <h3>
+      <p id="serverRes"></p>
+    </h3>
+  </div>
+  <script>
+    var HOST = location.origin.replace(/^http/, 'ws')
+    var ws = new WebSocket(HOST);
+    var el = document.getElementById('serverRes');
+    async function myFunction() {
+      val = document.getElementById('clientReq').value
+      ws.send(val);
+    };
+    ws.onopen = function (event) {
+      document.getElementById('status').innerHTML = '<b>Connection Status:</b> Connected.'
+      console.log('opened server!!')
+    };
+    ws.onmessage = function (event) {
+      console.log(event);
+      el.innerHTML = 'Server: ' + event.data;
+    };
+    ws.onclose = function (event) {
+      document.getElementById('status').innerHTML = '<b>Connection Status:</b> Disconnected.'
+      console.log('Connection Ended!!')
+    }
+  </script>
+</body>
+
+</html>

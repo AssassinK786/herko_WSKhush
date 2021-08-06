@@ -1,0 +1,6 @@
+{
+  "name": "Node.js WebSocket webhook Example",
+  "description": "Using WebSockets and Webhook on Heroku",
+  "repository": "https://github.com/your-github-repo/heroku-websocket-webhook",
+  "keywords": ["node", "websocket", "webhook"]
+}
